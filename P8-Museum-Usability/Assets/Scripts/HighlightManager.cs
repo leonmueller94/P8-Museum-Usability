@@ -21,16 +21,19 @@ public class HighlightManager : MonoBehaviour
         {
             if (exhibitAudioManager.AudioClipIndex == 3)
             {
+                cameraIcon.gameObject.SetActive(true);
                 InsertValue(1, 1);
             }
             else if (exhibitAudioManager.AudioClipIndex == 8)
             {
+                cameraIcon.gameObject.SetActive(true);
                 InsertValue(1, 2);
             }
             else
             {
                 if(HighlightController.Highlights.Count > 1)
                 {
+                    cameraIcon.gameObject.SetActive(true);
                     HighlightController.ClearHighlights();
                 }
             }
