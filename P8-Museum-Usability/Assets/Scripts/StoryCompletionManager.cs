@@ -5,10 +5,8 @@ using System;
 
 public class StoryCompletionManager : MonoBehaviour
 {
-    [SerializeField] AudioClip swordMoveOn = null, needlesMoveOn = null, tubMoveOn = null,
-        signMoveOn = null, skullMoveOn = null, bankMoveOn = null;
+    [SerializeField] AudioClip exhibitMoveOn = null;
     [SerializeField] AudioClip finishExperience = null;
-    [SerializeField] NPCManager npcManager;
     ExhibitAudioManager exhibitAudioManager;
     StoryOptionsManager storyOptionsManager;
     AudioUIControlManager audioUIControlManager;
@@ -20,7 +18,7 @@ public class StoryCompletionManager : MonoBehaviour
     public bool IsSignOver { get; private set; }
     public bool IsSkullOver { get; private set; }
     public bool IsBankOver { get; private set; }
-    public bool IsEnd { get; private set; }
+    //public bool IsEnd { get; private set; }
     public bool IsInteractive { get; private set; } = true;
 
     public static event Action<ExhibitTag> ExhibitVisitedEvent;
@@ -30,7 +28,6 @@ public class StoryCompletionManager : MonoBehaviour
         exhibitAudioManager = FindObjectOfType<ExhibitAudioManager>();
         storyOptionsManager = FindObjectOfType<StoryOptionsManager>();
         audioUIControlManager = FindObjectOfType<AudioUIControlManager>();
-        npcManager.GetComponent<NPCManager>();
     }
 
     public void CheckExhibitCompletion()
@@ -42,7 +39,7 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsSwordOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Sword);
-                StartCoroutine(MoveOnToNextExhibit(swordMoveOn));
+                StartCoroutine(MoveOnToNextExhibit(exhibitMoveOn));
                 ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -53,7 +50,6 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsNeedlesOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Tattoo);
-                StartCoroutine(MoveOnToNextExhibit(needlesMoveOn));
                 ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -64,7 +60,7 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsTubOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bathtub);
-                StartCoroutine(MoveOnToNextExhibit(tubMoveOn));
+                StartCoroutine(MoveOnToNextExhibit(exhibitMoveOn));
                 ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -75,7 +71,6 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsSignOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Petrea);
-                StartCoroutine(MoveOnToNextExhibit(signMoveOn));
                 ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -86,7 +81,6 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsSkullOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Skull);
-                StartCoroutine(MoveOnToNextExhibit(skullMoveOn));
                 ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -97,7 +91,6 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsBankOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bank);
-                StartCoroutine(MoveOnToNextExhibit(bankMoveOn));
                 ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -122,7 +115,7 @@ public class StoryCompletionManager : MonoBehaviour
         IsInteractive = true;
         storyOptionsManager.DisableOptionsButtons();
         audioUIControlManager.HideAudioControlUI();
-        audioUIControlManager.HideNPC();
+        audioUIControlManager.HideTalkingIcon();
         CheckForEnd();
     }
 
@@ -130,11 +123,11 @@ public class StoryCompletionManager : MonoBehaviour
     {
         if (IsSwordOver && IsTubOver)
         {
-            IsEnd = true;
-            if (IsEnd)
-            {
+            //IsEnd = true;
+            //if (IsEnd)
+            //{
                 StartCoroutine(CompleteJourney());
-            }
+            //}
         }
     }
 
@@ -142,13 +135,12 @@ public class StoryCompletionManager : MonoBehaviour
     {
         yield return Delay();
         exhibitAudioManager.GetAudioSource.PlayOneShot(finishExperience);
-        npcManager.NPCAnimator.Play("Default NPC Animation");
         audioUIControlManager.SkipButton.interactable = false;
         IsInteractive = false;
         yield return new WaitUntil(() => !exhibitAudioManager.GetAudioSource.isPlaying && exhibitAudioManager.IsDisplayQuestions);
         IsInteractive = true;
         audioUIControlManager.HideAudioControlUI();
-        audioUIControlManager.HideNPC();
+        audioUIControlManager.HideTalkingIcon();
     }
 
     IEnumerator Delay()

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tub Question5 Answer
   m_EditorClassIdentifier: 
   exhibitTag: Tub
-  audioClip: {fileID: 8300000, guid: 748c98a573a5f694186ccb39dbdcff69, type: 3}
+  audioClip: {fileID: 8300000, guid: 54d8d2481d7af104c8837ad51830f06f, type: 3}
   index: 5
   numberOfOptions: 2
   hasFinished: 0

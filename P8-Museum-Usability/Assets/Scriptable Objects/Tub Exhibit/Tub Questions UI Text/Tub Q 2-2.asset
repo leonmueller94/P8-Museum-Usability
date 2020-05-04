@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715af895bea14144a9b3e0524543fc40, type: 3}
   m_Name: Tub Q 2-2
   m_EditorClassIdentifier: 
-  question: "Er det en tyreofring p\xE5 en af pladerne?"
+  question: "Fort\xE6l mig om tyreofringspladen"

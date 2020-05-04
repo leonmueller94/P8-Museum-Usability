@@ -190,7 +190,6 @@ public class ExhibitAudioManager : MonoBehaviour
         audioUIControlManager.SkipButton.interactable = true;
         AudioClipIndex = 0;
         PlayAudio(CurrentExhibitStory, AudioClipIndex);
-        audioUIControlManager.DetermineExhibitRandomVoiceLines();
     }
 
     public void PlayAudio(StoryPart[] exhibitStory, int audioClipIndex)

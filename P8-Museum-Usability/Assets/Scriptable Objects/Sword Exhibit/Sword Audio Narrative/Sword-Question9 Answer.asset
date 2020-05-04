@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword-Question9 Answer
   m_EditorClassIdentifier: 
   exhibitTag: Sword
-  audioClip: {fileID: 8300000, guid: 78e3e23ce21e083409b0e59b1b4beb0a, type: 3}
+  audioClip: {fileID: 8300000, guid: 2f6085c0a71c1c445b455a39d85318a7, type: 3}
   index: 9
   numberOfOptions: 2
   hasFinished: 0

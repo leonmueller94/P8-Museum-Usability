@@ -5,8 +5,8 @@ using Vuforia;
 
 public class ImageTargetContainer : MonoBehaviour
 {
-    [SerializeField] GameObject cauldron;
-    [SerializeField] GameObject sword;
+    [SerializeField] GameObject cauldron = null;
+    [SerializeField] GameObject sword = null;
 
     ObjectTracker objectTracker;
 

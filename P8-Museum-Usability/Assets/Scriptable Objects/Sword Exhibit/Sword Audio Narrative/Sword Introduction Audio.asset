@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword Introduction Audio
   m_EditorClassIdentifier: 
   exhibitTag: Sword
-  audioClip: {fileID: 8300000, guid: 123365de466f72a4499859697fa3b5d2, type: 3}
+  audioClip: {fileID: 8300000, guid: 77156fe066dcbe540bd463d9c5928187, type: 3}
   index: 0
   numberOfOptions: 3
   hasFinished: 0

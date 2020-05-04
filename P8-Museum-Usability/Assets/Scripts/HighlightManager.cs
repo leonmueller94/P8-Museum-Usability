@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HighlightManager : MonoBehaviour
 {
     [SerializeField] ExhibitAudioManager exhibitAudioManager = null;
-    [SerializeField] Image cameraIcon;
+    [SerializeField] Image cameraIcon = null;
 
     private void Awake()
     {

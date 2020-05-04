@@ -15,8 +15,8 @@ public class IntroManager : MonoBehaviour
     [Header("Introduction UI Control")]
     [SerializeField] Button skipButton = null;
     [SerializeField] Button playPauseButton = null;
-    [SerializeField] Image npcTalkingIndicator = null, npcTalkingIndicatorIcon = null, playPauseIcon = null, npc = null;
-    [SerializeField] Sprite playSprite = null, npcNotTalkingIndicator = null;
+    [SerializeField] Image talkingIndicator = null, talkingIndicatorIcon = null, playPauseIcon = null;
+    [SerializeField] Sprite playSprite = null, notTalkingIndicator = null;
 
     [Header("Introduction Audio")]
     [SerializeField] AudioClip[] introduction = null;
@@ -31,12 +31,11 @@ public class IntroManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         defaultPauseSprite = playPauseIcon.GetComponent<Image>().sprite;
-        defaultTalkingIndicatorSprite = npcTalkingIndicatorIcon.sprite;
+        defaultTalkingIndicatorSprite = talkingIndicatorIcon.sprite;
 
         playPauseButton.gameObject.SetActive(false);
         skipButton.gameObject.SetActive(false);
-        npcTalkingIndicator.gameObject.SetActive(false);
-        npc.gameObject.SetActive(false);
+        talkingIndicator.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -64,10 +63,6 @@ public class IntroManager : MonoBehaviour
         {
             audioSource.PlayOneShot(introduction[audioClipIndex]);
             StartCoroutine(WaitThenResumeAudio());
-        }
-        else if(audioSource.isPlaying)
-        {
-            Debug.Log("AUDIO IS CURRENTLY PLAYING");
         }
     }
 
@@ -113,14 +108,12 @@ public class IntroManager : MonoBehaviour
     {
         if (audioSource.isPlaying)
         {
-            npcTalkingIndicator.gameObject.SetActive(true);
-            npcTalkingIndicatorIcon.sprite = defaultTalkingIndicatorSprite;
-            npc.gameObject.SetActive(true);
+            talkingIndicator.gameObject.SetActive(true);
+            talkingIndicatorIcon.sprite = defaultTalkingIndicatorSprite;
         }
         else
         {
-            npcTalkingIndicatorIcon.sprite = npcNotTalkingIndicator;
-            //npc.gameObject.SetActive(false);
+            talkingIndicatorIcon.sprite = notTalkingIndicator;
         }
     }
 
