@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="CauldronSmall" size="0.070000 0.046957" />
+    <ImageTarget name="SwordSmall" size="0.070000 0.052500" />
+    <ImageTarget name="Sword" size="1.000000 0.750000" />
+    <ImageTarget name="Cauldron" size="1.000000 0.670820" />
+  </Tracking>
+</QCARConfig>
