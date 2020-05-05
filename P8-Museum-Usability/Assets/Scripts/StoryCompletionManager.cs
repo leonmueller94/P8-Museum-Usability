@@ -40,7 +40,7 @@ public class StoryCompletionManager : MonoBehaviour
                 IsSwordOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Sword);
                 StartCoroutine(MoveOnToNextExhibit(exhibitMoveOn));
-                ImageTargetController.SwitchToNextImageTarget();
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsNeedlesOver)
@@ -62,7 +62,7 @@ public class StoryCompletionManager : MonoBehaviour
                 IsTubOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bathtub);
                 StartCoroutine(MoveOnToNextExhibit(exhibitMoveOn));
-                //ImageTargetController.SwitchToNextImageTarget();
+                ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsSignOver)
