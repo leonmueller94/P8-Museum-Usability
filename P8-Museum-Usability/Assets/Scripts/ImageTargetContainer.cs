@@ -18,8 +18,8 @@ public class ImageTargetContainer : MonoBehaviour
     {
         imageTargets = new List<GameObject>();
 
-        imageTargets.Add(cauldron);
         imageTargets.Add(sword);
+        imageTargets.Add(cauldron);
 
         ImageTargetController.NumberOfImageTargets = imageTargets.Count;
 
