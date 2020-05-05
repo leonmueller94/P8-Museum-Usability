@@ -50,7 +50,7 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsNeedlesOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Tattoo);
-                StartCoroutine(MoveOnToNextExhibit(needlesMoveOn));
+                //StartCoroutine(MoveOnToNextExhibit(needlesMoveOn));
                 //ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -61,7 +61,7 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsTubOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bathtub);
-                StartCoroutine(MoveOnToNextExhibit(tubMoveOn));
+                StartCoroutine(MoveOnToNextExhibit(exhibitMoveOn));
                 //ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -72,7 +72,7 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsSignOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Petrea);
-                StartCoroutine(MoveOnToNextExhibit(signMoveOn));
+                //StartCoroutine(MoveOnToNextExhibit(signMoveOn));
                 //ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -83,7 +83,7 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsSkullOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Skull);
-                StartCoroutine(MoveOnToNextExhibit(skullMoveOn));
+                //StartCoroutine(MoveOnToNextExhibit(skullMoveOn));
                 //ImageTargetController.SwitchToNextImageTarget();
             }
         }
@@ -94,7 +94,7 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsBankOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bank);
-                StartCoroutine(MoveOnToNextExhibit(bankMoveOn));
+                //StartCoroutine(MoveOnToNextExhibit(bankMoveOn));
                 //ImageTargetController.SwitchToNextImageTarget();
             }
         }
