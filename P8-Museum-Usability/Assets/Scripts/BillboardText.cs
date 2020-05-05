@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BillboardText : MonoBehaviour
 {
-    [SerializeField] Text highlightText;
+    [SerializeField] Image highlightText;
 
 
     void Update()

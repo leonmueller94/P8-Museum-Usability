@@ -177,9 +177,7 @@ public class CustomTrackableEventHandler : MonoBehaviour
                 Debug.Log("DEBUG: " + highlight.ToString());
                 rendererComponents[highlight].enabled = true;
             }
-
-
-
+            
         }
 
         if (OnTargetFound != null)
