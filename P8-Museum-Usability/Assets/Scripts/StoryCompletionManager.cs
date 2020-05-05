@@ -50,7 +50,8 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsNeedlesOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Tattoo);
-                ImageTargetController.SwitchToNextImageTarget();
+                //StartCoroutine(MoveOnToNextExhibit(needlesMoveOn));
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsTubOver)
@@ -61,7 +62,7 @@ public class StoryCompletionManager : MonoBehaviour
                 IsTubOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bathtub);
                 StartCoroutine(MoveOnToNextExhibit(exhibitMoveOn));
-                ImageTargetController.SwitchToNextImageTarget();
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsSignOver)
@@ -71,7 +72,8 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsSignOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Petrea);
-                ImageTargetController.SwitchToNextImageTarget();
+                //StartCoroutine(MoveOnToNextExhibit(signMoveOn));
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsSkullOver)
@@ -81,7 +83,8 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsSkullOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Skull);
-                ImageTargetController.SwitchToNextImageTarget();
+                //StartCoroutine(MoveOnToNextExhibit(skullMoveOn));
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsBankOver)
@@ -91,7 +94,8 @@ public class StoryCompletionManager : MonoBehaviour
             {
                 IsBankOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bank);
-                ImageTargetController.SwitchToNextImageTarget();
+                //StartCoroutine(MoveOnToNextExhibit(bankMoveOn));
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
     }
