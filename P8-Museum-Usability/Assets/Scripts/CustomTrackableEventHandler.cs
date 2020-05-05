@@ -139,12 +139,12 @@ public class CustomTrackableEventHandler : MonoBehaviour
 
             if (ImageTargetController.CurrentImageTarget == 0 && firstTrigger)
             {
-                exhibitAudioManager.TriggerSwordStory = true;
+                exhibitAudioManager.TriggerTubStory = true;
                 firstTrigger = false;
             }
             else if (ImageTargetController.CurrentImageTarget == 1 && firstTrigger)
             {
-                exhibitAudioManager.TriggerTubStory = true;
+                exhibitAudioManager.TriggerSwordStory = true;
                 firstTrigger = false;
             }
             //else if (ImageTargetController.CurrentImageTarget == 2 && firstTrigger)
