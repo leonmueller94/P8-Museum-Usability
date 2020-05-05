@@ -54,7 +54,7 @@ public class StoryCompletionManager : MonoBehaviour
                 IsNeedlesOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Tattoo);
                 StartCoroutine(MoveOnToNextExhibit(needlesMoveOn));
-                ImageTargetController.SwitchToNextImageTarget();
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsTubOver)
@@ -65,7 +65,7 @@ public class StoryCompletionManager : MonoBehaviour
                 IsTubOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bathtub);
                 StartCoroutine(MoveOnToNextExhibit(tubMoveOn));
-                ImageTargetController.SwitchToNextImageTarget();
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsSignOver)
@@ -76,7 +76,7 @@ public class StoryCompletionManager : MonoBehaviour
                 IsSignOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Petrea);
                 StartCoroutine(MoveOnToNextExhibit(signMoveOn));
-                ImageTargetController.SwitchToNextImageTarget();
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsSkullOver)
@@ -87,7 +87,7 @@ public class StoryCompletionManager : MonoBehaviour
                 IsSkullOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Skull);
                 StartCoroutine(MoveOnToNextExhibit(skullMoveOn));
-                ImageTargetController.SwitchToNextImageTarget();
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
         if (!IsBankOver)
@@ -98,7 +98,7 @@ public class StoryCompletionManager : MonoBehaviour
                 IsBankOver = true;
                 ExhibitVisitedEvent(ExhibitTag.Bank);
                 StartCoroutine(MoveOnToNextExhibit(bankMoveOn));
-                ImageTargetController.SwitchToNextImageTarget();
+                //ImageTargetController.SwitchToNextImageTarget();
             }
         }
     }
