@@ -1,18 +1,28 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Vuforia;
 
 public class HighlightManager : MonoBehaviour
 {
     [SerializeField] ExhibitAudioManager exhibitAudioManager = null;
-    [SerializeField] Image cameraIcon;
+    [SerializeField] UnityEngine.UI.Image cameraIcon = null;
+    ObjectTracker objectTracker;
 
     private void Awake()
     {
         exhibitAudioManager.GetComponent<ExhibitAudioManager>();
         HighlightController.InitializeHighlightList();
+
+        VuforiaARController.Instance.RegisterVuforiaStartedCallback(InstantiateObjectTracker); 
+    }
+
+    private void InstantiateObjectTracker()
+    {
+        objectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
     }
 
     public void TriggerHighlight()
@@ -21,20 +31,19 @@ public class HighlightManager : MonoBehaviour
         {
             if (exhibitAudioManager.AudioClipIndex == 3)
             {
-                cameraIcon.gameObject.SetActive(true);
                 InsertValue(1, 1);
             }
             else if (exhibitAudioManager.AudioClipIndex == 8)
             {
-                cameraIcon.gameObject.SetActive(true);
                 InsertValue(1, 2);
             }
             else
             {
                 if(HighlightController.Highlights.Count > 1)
                 {
-                    cameraIcon.gameObject.SetActive(true);
+                    objectTracker.Stop();
                     HighlightController.ClearHighlights();
+                    objectTracker.Start();
                 }
             }
         }
@@ -42,32 +51,26 @@ public class HighlightManager : MonoBehaviour
         {
             if (exhibitAudioManager.AudioClipIndex == 2)
             {
-                cameraIcon.gameObject.SetActive(true);
                 InsertValue(1, 1);
                 InsertValue(2, 2);
             }
             else if (exhibitAudioManager.AudioClipIndex == 6)
             {
-                cameraIcon.gameObject.SetActive(true);
                 HighlightController.ClearHighlights();
                 InsertValue(1,3);
             }
             else if (exhibitAudioManager.AudioClipIndex == 7)
             {
-                cameraIcon.gameObject.SetActive(true);
                 HighlightController.ClearHighlights();
                 InsertValue(1,4);
             }
-            //else if (exhibitAudioManager.AudioClipIndex == 8)
-            //{
-            //    InsertValue(1, 4);
-            //}
             else
             {
                 if (HighlightController.Highlights.Count > 1)
                 {
-                    cameraIcon.gameObject.SetActive(true);
+                    objectTracker.Stop();
                     HighlightController.ClearHighlights();
+                    objectTracker.Start();
                 }
             }
         }
@@ -76,18 +79,18 @@ public class HighlightManager : MonoBehaviour
             if (exhibitAudioManager.AudioClipIndex == 4)
             {
                 InsertValue(1, 1);
-
             }
             else if (exhibitAudioManager.AudioClipIndex == 5)
             {
                 InsertValue(1, 2);
-
             }
             else
             {
                 if (HighlightController.Highlights.Count > 1)
                 {
+                    objectTracker.Stop();
                     HighlightController.ClearHighlights();
+                    objectTracker.Start();
                 }
             }
             
@@ -98,11 +101,15 @@ public class HighlightManager : MonoBehaviour
     {
         if (HighlightController.Highlights.Count == index)
         {
+            objectTracker.Stop();
             HighlightController.Highlights.Insert(index, value);
+            objectTracker.Start();
         }
         else
         {
+            objectTracker.Stop();
             HighlightController.Highlights[index] = value;
+            objectTracker.Start();
         }
     }
 }
